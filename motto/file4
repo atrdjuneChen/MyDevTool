@@ -1,2 +1,6 @@
 file4
-hi, merge verison
+<<<<<<< HEAD
+hello, merge verison
+=======
+hello, merge verison
+>>>>>>> testing
