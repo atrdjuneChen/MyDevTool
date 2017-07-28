@@ -1,0 +1,15 @@
+task templates {
+  doLast {
+    println 'process email templates'
+  }
+}
+
+task sendEmails(dependsOn: templates) {
+  doLast {
+    println 'send emails'
+  }
+}
+
+// disable the task sendEmails
+sendEmails.enabled = false
+

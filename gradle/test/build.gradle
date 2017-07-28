@@ -1,0 +1,11 @@
+task world << {
+  println 'world'
+}
+
+world.doFirst {
+  println 'hello'
+}
+
+world.doFirst {
+  println 'hi'
+}

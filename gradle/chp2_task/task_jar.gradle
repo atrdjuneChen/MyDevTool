@@ -1,0 +1,16 @@
+// a jar task creates a jar file from source file.
+// java plug-in creates a task of this type
+
+apply plugin: 'java'
+
+task customJar(type: Jar) {
+  mainfest {
+    attributes firstKey: 'firstValue', secondKey: 'secondValue'
+  }
+  archiveName = 'hello.jar'
+  destinationDir = fiel("${buildDir}/jars")
+  from sourceSets.main.classes
+}
+
+// Note that the archive name and destination directory are easily configurable. Likewise, the manifest can be populated with custom attributes using a readable Groovy map syntax. The contents of the JAR are identified by the from sourceSets.main.classes line, which specifies that the compiled .class files of the main Java sources are to be included. The from method is identical to the one used in the CopyTask example, which reveals an interesting insight: the Jar task extends the Copy task. Even before we’ve seen exhaustive documentation of the Gradle object model and DSL, these details hint at the richness and order of the underlying structure.
+

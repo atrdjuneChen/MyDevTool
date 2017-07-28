@@ -1,0 +1,13 @@
+task loadTestData {
+  dependsOn << compileTestClasses
+  dependsOn << createSchema
+}
+
+task loadTestData {
+  dependsOn compileTestClasses, createSchema
+}
+
+task loadTestData
+loadTestData.dependsOn compileTestClasses, createSchema
+
+task loadTestData(dependsOn: [compileTestClasses, createSchema])

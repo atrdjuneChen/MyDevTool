@@ -1,0 +1,13 @@
+// the onlyIf method allows you to express a predicate which determines whether a taks should be executed.
+
+task createSchema << {
+  println 'create database schema'
+}
+
+task loadTestData(dependsOn: createSchema) << {
+  println 'load test data'
+}
+
+loadTestData.onlyIf {
+  System.properties['load.data'] == 'true'
+}

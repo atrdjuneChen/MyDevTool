@@ -1,0 +1,10 @@
+task world << {
+  println 'world'
+}
+world.doFirst {
+    println 'create schema'
+}
+
+world.doFirst {
+  println 'hi'
+}

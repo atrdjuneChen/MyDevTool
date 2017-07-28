@@ -1,0 +1,5 @@
+task echoMyPath {
+  doLast {
+    println "This task's path is ${path}"
+  }
+}
