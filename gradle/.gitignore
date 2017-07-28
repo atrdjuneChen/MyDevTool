@@ -1,3 +1,7 @@
+# Gradle build files
+*.lock
+*.bin
+
 # Compiled source #
 ###################
 *.com
